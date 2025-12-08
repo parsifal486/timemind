@@ -1,5 +1,13 @@
+import { config } from "@/tamagui.config";
 import { Stack } from "expo-router";
+import { TamaguiProvider } from "tamagui";
 
 export default function RootLayout() {
-  return <Stack />;
+  return (
+    <TamaguiProvider config={config}>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+    </TamaguiProvider>
+  );
 }
