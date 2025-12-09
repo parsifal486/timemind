@@ -1,13 +1,20 @@
+import { ActivitySquare, Award, Bolt } from "@tamagui/lucide-icons";
 import { Tabs } from "expo-router";
 
 export default function Layout() {
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: false,
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
           title: "Home",
           tabBarLabel: "Home",
+          tabBarIcon: ({ color }) => <ActivitySquare size={28} />,
         }}
       />
       <Tabs.Screen
@@ -15,6 +22,7 @@ export default function Layout() {
         options={{
           title: "Tasks",
           tabBarLabel: "Tasks",
+          tabBarIcon: ({ color }) => <Award size={28}> </Award>,
         }}
       />
       <Tabs.Screen
@@ -22,6 +30,7 @@ export default function Layout() {
         options={{
           title: "About",
           tabBarLabel: "About",
+          tabBarIcon: ({ color }) => <Bolt size={28}></Bolt>,
         }}
       />
     </Tabs>

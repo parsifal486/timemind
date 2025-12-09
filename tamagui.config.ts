@@ -1,17 +1,16 @@
 import { defaultConfig } from "@tamagui/config/v4";
 import { createTamagui } from "tamagui";
+import themes from "./theme";
 
-export const config = createTamagui({
+const config = createTamagui({
   ...defaultConfig,
-  media: {
-    ...defaultConfig.media,
-    // add your own media queries here, if wanted
-    
-  },
+  themes,
+  defaultTheme: "dark",
 });
 
-type AppConfig = typeof config;
+export type AppConfig = typeof config;
+export default config;
 
-declare module "tamagui" {
+declare module "@tamagui/core" {
   interface TamaguiCustomConfig extends AppConfig {}
 }

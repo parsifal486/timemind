@@ -1,4 +1,4 @@
-import { config } from "@/tamagui.config";
+import config from "@/tamagui.config";
 import { Stack } from "expo-router";
 import { TamaguiProvider } from "tamagui";
 
