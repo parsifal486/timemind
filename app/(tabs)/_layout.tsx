@@ -1,12 +1,37 @@
 import { ActivitySquare, Award, Bolt } from "@tamagui/lucide-icons";
 import { Tabs } from "expo-router";
+import { useTheme } from "tamagui";
 
 export default function Layout() {
+  const theme = useTheme();
+
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
+        tabBarActiveTintColor: theme.color11?.val,
+        tabBarInactiveTintColor: theme.color7?.val,
+        tabBarStyle: {
+          position: "absolute",
+          bottom: 25,
+          left: 50,
+          right: undefined,
+          width: 220,
+          height: 40,
+          borderRadius: 20,
+          backgroundColor: "$color",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginLeft: 20,
+          borderWidth: 1,
+          shadowColor: "black",
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.25,
+          shadowRadius: 3.84,
+          elevation: 5,
+        },
       }}
     >
       <Tabs.Screen
@@ -14,7 +39,12 @@ export default function Layout() {
         options={{
           title: "Home",
           tabBarLabel: "Home",
-          tabBarIcon: ({ color }) => <ActivitySquare size={28} />,
+          tabBarIcon: ({ focused }) => (
+            <ActivitySquare
+              size={28}
+              color={focused ? "$color11" : "$color7"}
+            />
+          ),
         }}
       />
       <Tabs.Screen
@@ -22,7 +52,9 @@ export default function Layout() {
         options={{
           title: "Tasks",
           tabBarLabel: "Tasks",
-          tabBarIcon: ({ color }) => <Award size={28}> </Award>,
+          tabBarIcon: ({ focused }) => (
+            <Award size={28} color={focused ? "$color11" : "$color7"} />
+          ),
         }}
       />
       <Tabs.Screen
@@ -30,7 +62,9 @@ export default function Layout() {
         options={{
           title: "About",
           tabBarLabel: "About",
-          tabBarIcon: ({ color }) => <Bolt size={28}></Bolt>,
+          tabBarIcon: ({ focused }) => (
+            <Bolt size={28} color={focused ? "$color11" : "$color7"} />
+          ),
         }}
       />
     </Tabs>
