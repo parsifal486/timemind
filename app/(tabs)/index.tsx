@@ -1,9 +1,17 @@
-import { Text, View } from "react-native";
+import PieChart from "@/componets/donutChart";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "tamagui";
 
 export default function HomeScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Home</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }} edges={["top", "left", "right"]}>
+      <View
+        style={{
+          flex: 1,
+        }}
+      >
+        <PieChart />
+      </View>
+    </SafeAreaView>
   );
 }
