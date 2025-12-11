@@ -1,8 +1,8 @@
 type TimeSection = {
   id: string;
-  name: string;
-  color: string;
-  value: number;
+  taskId: string;
+  startTime: Date;
+  endTime: Date;
 };
 
 export type { TimeSection };
