@@ -9,11 +9,9 @@ export type DonutChartProps = {
 
 export default function DonutChart({ data }: { data: DonutChartProps[] }) {
   return (
-    <View
-      style={{ height: 300, borderWidth: 1, borderColor: "red", width: "100%" }}
-    >
+    <View style={{ height: 200, width: "100%" }}>
       <PolarChart data={data} labelKey="id" valueKey="value" colorKey="color">
-        <Pie.Chart innerRadius={85} />
+        <Pie.Chart innerRadius={55} />
       </PolarChart>
     </View>
   );

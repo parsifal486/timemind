@@ -1,4 +1,5 @@
 import PieChart from "@/componets/donutChart";
+import TaskSelector from "@/componets/taskSelector";
 import { useStore } from "@/store";
 import { useTasksStore } from "@/store/useTaskStore";
 import { useMemo } from "react";
@@ -40,6 +41,7 @@ export default function HomeScreen() {
         }}
       >
         <PieChart data={dataForDonut} />
+        <TaskSelector tasks={tasks} onClick={() => {}} />
       </View>
     </SafeAreaView>
   );
